@@ -5,13 +5,12 @@ def function(x, y):
 
 def Euler_method(left_bord, right_bord, step):
 
-    x = 0
+    x = left_bord
     y = 1
 
-    while left_bord <= right_bord:
+    while x <= right_bord:
         y += step * function(x, y)
         x += step
-        left_bord += step
 
     return x, y
 
