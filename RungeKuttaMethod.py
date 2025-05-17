@@ -1,12 +1,11 @@
-import math
 
 def function(x, y):
-    return y / (math.log(y) - x + 1)
+    return x * y * (x * x * y + 2)
 
 def Runge_Kutta_method(left_bord, right_bord, step):
 
     x = left_bord
-    y = 1
+    y = 10/3
 
     k0, k1, k2, k3 = 0, 0, 0, 0
     while x <= right_bord:
@@ -22,13 +21,15 @@ def Runge_Kutta_method(left_bord, right_bord, step):
 
 if __name__ == '__main__':
     left_border = 0
-    right_border = 4
+    right_border = 0.9
 
     h1 = 0.01
     h2 = 0.001
     h3 = 0.0001
     h4 = 0.00001
     h5 = 0.000001
+    h6 = 1e-7
+    h7 = 1e-8
 
     result1 = Runge_Kutta_method(left_border, right_border, h1)
     print(f'Ответ: {result1} при шаге {h1}.')
@@ -44,3 +45,9 @@ if __name__ == '__main__':
 
     result5 = Runge_Kutta_method(left_border, right_border, h3)
     print(f'Ответ: {result5} при шаге {h5}.')
+
+    result6 = Runge_Kutta_method(left_border, right_border, h6)
+    print(f'Ответ: {result6} при шаге {h6}.')
+
+    result7 = Runge_Kutta_method(left_border, right_border, h7)
+    print(f'Ответ: {result7} при шаге {h7}.')
